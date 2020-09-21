@@ -1,0 +1,52 @@
+@import "../../styles/breakpoints.scss";
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  width: 80%;
+  height: 650px;
+    
+  &__header {
+    height: 40px;
+    background-color: transparent;
+    @include for-medium-up {
+      height: 60px;
+    }
+
+  }
+
+  &__container {
+    background-color: white;
+    margin-top: 40px;
+    border-top: 1px solid rgb(219, 217, 217);
+    @include for-medium-up {
+      margin-top: 60px;
+    }
+  }
+  
+  &__title {
+    display: flex;
+    height: 42px;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    
+  }
+
+  &__line {
+    border-top: 1px solid rgb(219, 217, 217);
+    margin: 8px 0 8px 0;
+  }
+
+}
+
+a { 
+  text-decoration: none; 
+ } 
+
+ a:visited {
+  color: black; 
+ }

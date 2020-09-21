@@ -1,0 +1,144 @@
+@import "../../styles/breakpoints.scss";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 440px;
+  padding-top: 40px;
+ 
+  @include for-medium-up {
+    height: 560px;
+    align-items: flex-start;
+    padding-top: 60px;
+    background-size: 133.5%;
+    background-position: 0% -0%;
+  }
+
+  @include for-large-up {
+    height: 660px; 
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    background-image: url('../../image/banner-photo.jpg');
+    background-size: cover;
+    background-position: 52%;
+    
+    @include for-medium-up {
+      height: 500px;
+      align-items: flex-start;
+      background-size: 133.5%;
+      background-position: 0% -0%;
+    }
+
+    @include for-large-up {
+      height: 660px;
+      align-items: flex-start;
+      background-size: 100%; 
+    }
+  }
+
+  &__h1 {
+    width: 90%;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 34px;
+    text-align: center;
+    margin-top: 69.5px;
+    letter-spacing: -0.12px;
+    z-index: 1;
+  
+    @include for-medium-up {
+      font-size: 40px;
+      line-height: 44px;
+      width: 420px;
+      text-align: start;
+      margin-left: 30px;
+      margin-top: 59px;
+      letter-spacing: -0.32px;
+    } 
+
+    @include for-large-up {
+      font-size: 50px;
+      line-height: 54px;
+      width: 52%;
+      margin-top: 108px;
+      letter-spacing: -0.6px;
+      word-spacing: 1.2px;
+    }
+  }
+
+  &__p1_mobile {
+    width: 92%;
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 1px;
+    z-index: 1;
+    overflow: hidden;
+  
+    @include for-medium-up {
+      display:none;
+    }
+  }
+
+  &__p1_tablet {
+    display: none;
+    width: 450px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: start;
+    margin-left: 30px;
+    margin-top: 1px;
+    z-index: 1;
+  
+    @include for-medium-up {
+      display: block;
+    }
+    
+    @include for-large-up {
+     width: 530px;
+     margin-top: -9px;
+    }
+  }
+
+  &__btn {
+    width: 58.3%;
+    height: 37px;
+    color: #f8f8f8;
+    border-radius: 4px;
+    border: none;
+    margin-top: 24px;
+    margin-left: -0.5px;
+    font-weight: 600;
+    letter-spacing: 0.15px;
+    background: #ef5b4c;
+    z-index: 1;
+ 
+    
+    @include for-medium-up {
+      height: 38px;
+      width: 27.3%;
+      margin-left: 30px;
+      margin-top: 34px;
+    }
+
+    @include for-large-up {
+      width: 20.4%;
+      margin-left: 30px;
+     }
+  }
+}
+
+.about__a:visited {
+  color: #fff;
+}
+

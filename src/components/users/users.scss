@@ -1,0 +1,130 @@
+@import "../../styles/breakpoints.scss";
+
+.users {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  background-color: #f9f9f3;
+  text-align: center;
+  
+  &__data_360 {
+    align-items: center;
+  }
+  &__data_768 {
+    display: none;
+  }
+  &__data_container {
+    display: none;
+  }
+
+  @include for-medium-up {
+    height: 1030px;
+    
+    &__data_container {
+      display: block;
+      margin-left: 14px;
+      margin-top: -2px;
+    }
+
+    &__data_360 {
+      display: none;
+    }
+
+    &__data_768 {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include for-large-up {
+      height: 1104px;
+
+      &__data_container {
+        margin-left: 4px;
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 34px;
+    margin-top: 76px;
+
+    @include for-medium-up {
+      font-size: 40px;
+      line-height: 44px;
+      margin-top: 114px;
+    }
+
+    @include for-large-up {
+      font-size: 50px;
+      line-height: 54px;
+      margin-top: 152px;
+    }
+  }
+
+  &__attention {
+    margin-top: -8px;
+    margin-bottom: 8px;
+    
+    @include for-medium-up {
+      margin-bottom: 40px;
+    }
+    @include for-large-up {
+      margin-top: -12px;
+      margin-bottom: 37px;
+    }
+  }
+
+  &__data_360-item {
+    display: flex;
+    width: 100%;
+    height: 275px;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  &__data_768-item {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    height: 295px;
+    align-items: center;
+    justify-content: center;
+    @include for-medium-up {
+      margin-bottom: 40px;
+    }
+    @include for-large-up {
+      margin-left: -4px;
+    }
+  }
+
+  &__btn {
+    width: 58%;
+    height: 38px;
+    border-radius: 4px;
+    border: none;
+    margin-top: 4px;
+    margin-bottom: 80px;
+    font-weight: 600;
+    letter-spacing: 0.15px;
+    background: #ef5b4c;
+    color: #fff;
+
+    @include for-medium-up {
+      margin-top: -34px;
+      width: 28%;
+      margin-left: -12px;
+    }
+
+    @include for-large-up {
+      margin-top: 1.5px;
+      width: 20.5%;
+    }
+  }
+} 
