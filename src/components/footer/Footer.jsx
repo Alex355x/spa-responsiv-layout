@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className='footer'>
       <div className='footer-container'>
         <div className='footer-logo'>
-        © abz.agency specially for the test task
+        © Alex P. specially for you. Responsive layout, Pixel Perfect are used here.
         </div>
       </div>
     </footer>

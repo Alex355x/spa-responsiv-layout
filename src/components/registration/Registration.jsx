@@ -15,16 +15,16 @@ const Registration = ({fetchUsers, positions}) => {
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append('name', state.name);
-    formData.append('email', state.email);
-    formData.append('phone', state.phone);
-    formData.append('position', state.position);
-    formData.append('position_id', state.position_id);
-    formData.append('registration_timestamp', state.registration_timestamp);
-    formData.append('photo', state.photo);
+    // const formData = new FormData();
+    // formData.append('name', state.name);
+    // formData.append('email', state.email);
+    // formData.append('phone', state.phone);
+    // formData.append('position', state.position);
+    // formData.append('position_id', state.position_id);
+    // formData.append('registration_timestamp', state.registration_timestamp);
+    // formData.append('photo', state.photo);
 
-    createUser(formData).then(() => fetchUsers());
+    createUser(state).then(() => fetchUsers());
     setUpdateState({
       name: '',
       email: '',
@@ -125,8 +125,8 @@ const Registration = ({fetchUsers, positions}) => {
   
   return (
     <section id='reg' className='registration'>
-        <h1 className='registration__title'>Register to get a work</h1>
-        <p className='registration__attention'>Attention! After successful registration and alert, update the list of users in the block from the top</p>
+        <h1 className='registration__title'>Try to register on this website</h1>
+        <p className='registration__attention'>New user will apear on the first place. Pfoto can't be displayed because of fake api service, but it work with the real api. Validation of phone number and email - realized here, other filds required.</p>
         <form className="registration__form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" className="registration__label">Name</label>

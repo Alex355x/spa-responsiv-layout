@@ -1,6 +1,8 @@
-const baseUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
+//const baseUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
+const baseUrl = 'https://5eecba9c4cbc34001633096c.mockapi.io/api/v1/form';
+
 const baseUrl2 = 'https://frontend-test-assignment-api.abz.agency/api/v1/positions';
-const baseUrl3 = 'https://frontend-test-assignment-api.abz.agency/api/v1/token';
+// const baseUrl3 = 'https://frontend-test-assignment-api.abz.agency/api/v1/token';
 
 export const fetchUsersList = () => {
 return fetch(baseUrl)
@@ -10,7 +12,8 @@ return fetch(baseUrl)
     }
   })
   .then(usersList => 
-      usersList.users
+      usersList
+      //usersList.users
   );
 };
 
@@ -27,24 +30,26 @@ export const fetchPositionsList = () => {
     );
   };
 
-export const createUser = async formData => {
-  let token; 
-  await fetch(baseUrl3)
-  .then(res => {
-    if (res.ok) {
-      return res.json();
-    }
-  })
-  .then(response => 
-    token = response.token
-  );
+export const createUser = async usersData => {
+  // let token; 
+  // await fetch(baseUrl3)
+  // .then(res => {
+  //   if (res.ok) {
+  //     return res.json();
+  //   }
+  // })
+  // .then(response => 
+  //   token = response.token
+  // );
 
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
-      'token': token,
+      //'token': token,
+      'Content-Type': 'application/json',
     },
-    body: formData,
+    // body: formData,
+    body: JSON.stringify(usersData),
 })
   .then(function(response) { 
       return response.json(); 

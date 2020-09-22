@@ -6,10 +6,11 @@ const About = () => {
   return (
       <div className='about'>
         <div className='about__container'>
-          <h1 className='about__h1'>TEST ASSIGNMENT FOR FRONTEND DEVELOPER POSITION</h1>
-          <p className='about__p1_mobile'>We kindly remind you that your test assignment should be submitted as a link to github/bitbucket repository.
+          <h1 className='about__h1'>HEY FRIENDS! I'M LOOKING FOR FRONTEND DEVELOPER POSITION</h1>
+          <p className='about__p1_mobile'>My stack is Javascript, React, Redux, HTML5, CSS, Sass, Webpack, Git, React-router-dom, Rest Api, Jest, npm, Babel, EsLint. 
           </p>
-          <p className='about__p1_tablet'>We kindly remind you that your test assignment should be submitted as a link to github/bitbucket repository. Please be patient, we consider and respond to every application that meets minimum requirements. We look forward to your submission. Good luck! The photo has to scale in the banner area on the different screens.
+          <p className='about__p1_tablet'>My stack is Javascript, React, Redux, HTML5, CSS, Sass, Webpack, Git, React-router-dom, Rest Api, Jest, npm, Babel, EsLint.
+          I'm looking for new job opportinity in FrontEnd Development in a cool team and wish to conquer new hights and improve own skills to become exellent FE developer and team player.
           </p>
           <button className='about__btn'><a className='about__a' href="#reg">Sing up now</a></button>
         </div>

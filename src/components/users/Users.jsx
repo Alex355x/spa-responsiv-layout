@@ -79,8 +79,8 @@ class Users extends React.Component {
     return (
       <>
         <section className='users'>
-          <h1 className='users__title'>Our cheerful users</h1>
-          <p className='users__attention'>Attention! Sorting users by registration date</p>
+          <h1 className='users__title'>Users data which is fetched from API service</h1>
+          <p className='users__attention'>Wow! Sorting users by registration date - you also can register here</p>
           <div className='users__data_360'>
             {result}
             {this.state.buttonToShow && button}
