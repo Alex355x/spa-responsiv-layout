@@ -61,8 +61,13 @@ const Registration = ({fetchUsers, positions}) => {
   })
 
   const isRequired = value => value !== '' ? undefined : 'Required';
-  const regEmail = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  const isEmail = value => regEmail.test(value) ? undefined : 'Error';
+  // eslint-disable-next-line
+  const newLocal = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  const regEmail = newLocal;
+  function isEmail(value) {
+    return regEmail.test(value) ? undefined : 'Error';
+  }
+  // eslint-disable-next-line
   const regPhone = new RegExp(/^[\+]{0,1}380([0-9]{9})$/);
   const isPhone = value => value.length <= 13 && regPhone.test(value) ? undefined : 'Error';
   
@@ -108,7 +113,7 @@ const Registration = ({fetchUsers, positions}) => {
     boxShadow: "0px 0px 3px 0px rgba(243, 11, 23,1)"
   };
   const styleRedInput2 = { border: "1px solid rgb(243, 11, 23)"};
-  const styleRedInput3 = { border: "1px solid rgb(84, 137, 236)"};
+  // const styleRedInput3 = { border: "1px solid rgb(84, 137, 236)"};
 
   const upLoadPhoto = (e) => { 
     e.preventDefault();
