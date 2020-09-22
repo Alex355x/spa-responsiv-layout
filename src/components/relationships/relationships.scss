@@ -25,13 +25,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  //height: 860px;
+  min-height: 860px;
   text-align: center;
   background-color: #fff;
-  // border: 1px solid black;
 
   @include for-medium-up {
-    //height: 656px;
+    min-height: 836px;
 
     &__float_svg{
       display: flex;
@@ -43,6 +42,8 @@
   @include for-large-up {
     height: 720px;
   }
+
+
  
 
   &__h1 {
@@ -122,6 +123,7 @@
       margin-left: 31px;
       width: 87.5%;
       word-spacing: -1px;
+      // padding: 1px;
     }
 
     @include for-large-up {
