@@ -3,7 +3,7 @@ import "./registration.scss";
 import { createUser } from '../Gateway';
 
 const Registration = ({fetchUsers, positions}) => {
-  const [state, setUpdateState] = useState({ 
+  const [state, setUpdateState] = useState({
     name: '',
     email: '',
     phone: '',
@@ -12,9 +12,10 @@ const Registration = ({fetchUsers, positions}) => {
     registration_timestamp: Date.now(),
     photo: 'Upload your photo',
   });
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    //we can use formdata if we'll choose real baseurl in Gateway.js
     // const formData = new FormData();
     // formData.append('name', state.name);
     // formData.append('email', state.email);
@@ -43,7 +44,7 @@ const Registration = ({fetchUsers, positions}) => {
       [name]: value.replace(/^.*\\/, ""),
     });
   };
- 
+
   const handleRadioClick = (e) => {
     const { id, value } = e.target;
       setUpdateState({
@@ -70,7 +71,7 @@ const Registration = ({fetchUsers, positions}) => {
   // eslint-disable-next-line
   const regPhone = new RegExp(/^[\+]{0,1}380([0-9]{9})$/);
   const isPhone = value => value.length <= 13 && regPhone.test(value) ? undefined : 'Error';
-  
+
   const validatorsByField = {
     email: [isEmail],
     name: [isRequired],
@@ -108,14 +109,14 @@ const Registration = ({fetchUsers, positions}) => {
       ...stateError,
       errorTel: errorText, });
   }
- 
-  const styleRedInput = { border: "1px solid rgb(243, 11, 23)", 
+
+  const styleRedInput = { border: "1px solid rgb(243, 11, 23)",
     boxShadow: "0px 0px 3px 0px rgba(243, 11, 23,1)"
   };
   const styleRedInput2 = { border: "1px solid rgb(243, 11, 23)"};
   // const styleRedInput3 = { border: "1px solid rgb(84, 137, 236)"};
 
-  const upLoadPhoto = (e) => { 
+  const upLoadPhoto = (e) => {
     e.preventDefault();
     const errorText = validate('photo', e.target.files[0].name)
     console.log(errorText)
@@ -127,11 +128,11 @@ const Registration = ({fetchUsers, positions}) => {
      photo: e.target.files[0],
     });
   };
-  
+
   return (
     <section id='reg' className='registration'>
         <h1 className='registration__title'>Try to register on this website</h1>
-        <p className='registration__attention'>New user will apear on the first place. Pfoto can't be displayed because of fake api service, but it work with the real api. Validation of phone number and email - realized here, other filds required.</p>
+        <p className='registration__attention'>New user will apear on the first place. !!!!Photo can't be displayed now!!!!! because of fake api service (mockapi), but it works with the real api. Validation of phone number and email - realized here, other filds required.</p>
         <form className="registration__form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" className="registration__label">Name</label>
@@ -158,7 +159,7 @@ const Registration = ({fetchUsers, positions}) => {
               value={state.email}
               placeholder="Your email"
               required minLength="2" maxLength="100"
-              autoComplete="off"         
+              autoComplete="off"
               onChange={onEmailChange}
             />
             <span className='error-text error-text_email'>{stateError.error}</span>
@@ -181,8 +182,8 @@ const Registration = ({fetchUsers, positions}) => {
           </div>
           <div className="select">
             <div className="select__title"> Select your position</div>
-            <div className="select__radio"> 
-              {positions.map(el =>                   
+            <div className="select__radio">
+              {positions.map(el =>
                     <label key={el.name} className="container">{el.name}
                       <input type="radio"
                         name='key'
@@ -202,10 +203,10 @@ const Registration = ({fetchUsers, positions}) => {
               <p>{state.photo === 'Upload your photo' ? 'Upload your photo' : state.photo.name}</p>
               <button className='preview_btn-browse'
                style={stateError.errorPhoto === '' ? null : styleRedInput2}>
-              <input 
+              <input
               required
               placeholder='Upload your photo'
-              className="input_standard" 
+              className="input_standard"
               onChange={upLoadPhoto}
               type="file" name="photo" accept=".jpg, .jpeg" />
               Browse
@@ -231,7 +232,7 @@ export default Registration;
   // const initialFormData = Object.freeze({
   //   photo: 'Upload your photo',
   // });
-  
+
   // const [formData, updateFormData] = useState(initialFormData);
      // updateFormData({
     //   ...formData,
